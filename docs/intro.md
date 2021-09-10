@@ -11,3 +11,5 @@ Whppt is an open source, interactive CMS for your website and suite of tools tha
 ## Getting Started
 
 Visit your Whppt website's draft domain and you'll find a login button that allows you to securely log into whppt with your provided whppt username and login.
+
+<img src="/screenshots/loginForm.jpg" />
