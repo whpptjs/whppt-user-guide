@@ -1,56 +1,71 @@
 ---
 sidebar_position: 1
 ---
+
 # Create a Page
 
-In the **Whppt Toolbar** you can click the _Create a Page Button_ to set up a new publicly available page for your website.
+In the **Whppt Toolbar** you can click the _Create a Page_ button to set up a new publicly available page for your website.
 
-![img alt](/screenshots/createNewPage.jpg)
+![Create new page button](/screenshots/createNewPage.png)
 
 This will open a menu where you can configure your new page.
 
-![img alt](/screenshots/createPageForm.jpg)
+![Create page form in the menu](/screenshots/createPageForm.jpg)
 
 ## Create your first Page
 
-To create a page, you must configure its **Page Type**, **Template** and give it a **Slug**.
+To create a page, you must configure its **page type**, **template** and give it a **slug**.
 
 ### Page Type & Templates
 
-Page types are used to group custom designed Templates. Selecting a **Type** will allow you to select a **Template**
+Page types are used to group custom designed templates based on their purposes. Selecting a **type** will allow you to select a corresponding **template**
 
-![img alt](/screenshots/selectPageType.jpg)
+![Choose a page type](/screenshots/selectPageType.PNG)
 
-Selecting a **Template** gives your page a **Header** and **Content Section** that can be changed using Whppt's editing tools. 
+By selecting a **template**, your page will have a **header** and a **content section** that can be changed using Whppt's editing tools.
 
-![img alt](/screenshots/selectPageTemplate.jpg)
+![Choose a template](/screenshots/selectPageTemplate.png)
 
 :::note
-If there is only one **Template** available, it will be automatically selected for you.
+If there is only one **template** available under a certain **page type**, it will be automatically selected for you.
 :::
-### Basic Page Types and headers
 
-Your site will come with the following Page types and Templates, along with custom options:
+### Basic Page Types and Templates
 
-### Generic Page Type
+Your site will come with the following page types and templates, along with custom options:
 
-This page type groups common page templates for your website that can be used from the homepage, to the about page, new campaigns and branding.
+- #### Generic Page Type
 
-#### Home Template
+This page type groups common page templates for your website that can be used from the _homepage_, to the _about_ page, new _campaigns_ and _branding_.
 
-This template is already created for you and available at the root of your site. This template is still available to be applied to any page.
+- #### Generic Page Type - Home Template
 
-#### Generic Template
+  This template is already created for you and suitable for using at the root of your site. It is also available to be applied to any page.
 
-- Contact Template
-- News Page Type (creates a new article page that will be listed in /news)
+- #### Generic Page Type - Generic Template
+
+  - Contact template: Could be used for pages that hold address, contact details and other information of your business.
+
+  - Other custom made templates that are of general usage
+
+- #### News Page Type (News Page Template)
+
+  This page type and the matching template creates a new article page that will be listed under the URL `/news` to showcase the newest steps of your business.
 
 ### Page Slug
 
-The **slug** is the url path users will see when they visit your page. Slugs can be nested with a forward slash / to help structure your web pages.
+The **slug** is the url path users will see when they visit your page. Slugs can be nested with a forward slash `/` to help structure your web pages.
 
-Slugs are made URL friendly by Whppt, this will switch any spaces to hyphens, remove any uppercase characters and strip out characters that are not URL safe.
+Slugs are made URL friendly by Whppt:
+
+- First _forward slash_ `/` is optional
+- Any _spaces_ <code>&nbsp;</code> are switched to _hyphens_ `-`
+- _uppercase characters_ and characters that are not URL safe are stripped out (for example, `*`, `&`, `?` and etc.).
+
+The converted URL will be shown below as follows.
+
+![Whppt converts slug to be a safe URL](/screenshots/typeInSlug.png)
 
 ### Finish
 
-When you are happy with your Template and Slug configuration, click the **Create Page** button and you will be directed to your new page.
+When you are happy with your page, template and slug configuration, click the **Create Page** button, and Whppt will check if the slug is unique, then direct you to your new page.
