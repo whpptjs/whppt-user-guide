@@ -14,7 +14,7 @@ export default {
       },
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/favicon_novagroup.png' },
+      { rel: 'icon', type: 'image/png', href: '/whpptLogo.png' },
       { rel: 'stylesheet', href: '/css/focusRing.css' },
       // rel="preload" as="image" href="important.png"
     ],

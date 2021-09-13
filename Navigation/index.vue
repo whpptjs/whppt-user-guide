@@ -19,11 +19,6 @@ export default {
       default: false,
     },
   },
-  provide() {
-    return {
-      $getSubNav: () => this.subNav,
-    };
-  },
   data: () => {
     return {
       navVisible: true,
