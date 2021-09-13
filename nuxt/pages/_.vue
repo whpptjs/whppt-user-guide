@@ -2,6 +2,7 @@
   <div class="relative">
     <site-nav />
     <component :is="page.template" v-if="page" :page="page"></component>
+    <site-footer />
   </div>
 </template>
 
@@ -15,10 +16,11 @@ import Generic from '~~/generic/templates/Generic';
 import Child from '~~/generic/templates/Child';
 import Contact from '~~/generic/templates/Contact';
 import SiteNav from '~~/Navigation';
+import SiteFooter from '~~/Footer';
 
 export default {
   name: 'MainPage',
-  components: { Generic, Child, Home, Contact, SiteNav },
+  components: { Generic, Child, Home, Contact, SiteNav, SiteFooter },
   mixins: [meta],
   scrollToTop: true,
   transition: {
