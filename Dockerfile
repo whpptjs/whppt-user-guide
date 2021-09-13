@@ -19,7 +19,7 @@ WORKDIR /usr/src/nuxt-app
 COPY . /usr/src/nuxt-app/
 # COPY rds-combined-ca-bundle.pem /usr/src/express-api/
 RUN chmod +x ./entrypoint.sh
-RUN npm install
+RUN yarn
 # RUN npm un sharp
 # RUN npm i sharp
 RUN npm run build
