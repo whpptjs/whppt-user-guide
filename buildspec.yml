@@ -1,0 +1,40 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - REPOSITORY_URI=993572211001.dkr.ecr.ap-southeast-2.amazonaws.com/novagroup-${ENVIRONMENT}
+      - echo ${REPOSITORY_URI}
+      - COMMIT_HASH=$(date +%s)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo working directory
+      - pwd
+      - ls -la
+      - echo Building the Docker image...
+      - docker build --build-arg GOOGLE_TAG_MANAGER_ID --build-arg BASE_CDN_URL -t $REPOSITORY_URI:latest .
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+  post_build:
+    commands:
+      - docker ps -a
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI:latest
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - echo Writing image definitions files...
+      - mkdir definitions
+      - printf '[{"name":"website-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > definitions/release.json
+      - cat definitions/release.json
+artifacts:
+  files:
+    - 'mongo/**/*'
+    - 'definitions/release.json'
+  name: Deployment.zip
