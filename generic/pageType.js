@@ -46,7 +46,7 @@ export default {
       key: 'home',
       label: 'Home',
       init: ({ $set }, page) => {
-        if (!page.header) $set(page, 'header', { image: { imageId: '' } });
+        if (!page.header) $set(page, 'header', { image: { imageId: '', alt: '' } });
         if (!page.contents) $set(page, 'contents', []);
 
         return page;
