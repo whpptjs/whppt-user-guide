@@ -1,0 +1,30 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body,
+html {
+  font-family: 'Avenir Book', sans-serif;
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+/* purgecss start ignore */
+.page-leave-active,
+.page-enter-active {
+  transition: opacity 0.5s ease;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.animate {
+  @apply transition ease-in-out duration-300;
+}
+
+/* purgecss end ignore */
