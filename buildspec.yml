@@ -9,7 +9,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=993572211001.dkr.ecr.ap-southeast-2.amazonaws.com/novagroup-${ENVIRONMENT}
+      - REPOSITORY_URI=993572211001.dkr.ecr.ap-southeast-2.amazonaws.com/whppt-user-guide
       - echo ${REPOSITORY_URI}
       - COMMIT_HASH=$(date +%s)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
