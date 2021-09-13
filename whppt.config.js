@@ -1,6 +1,1 @@
-module.exports = {
-  defaults: {
-    footer: {},
-    nav: {},
-  },
-};
+module.exports = {};

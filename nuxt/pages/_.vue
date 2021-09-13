@@ -7,7 +7,7 @@
 <script>
 import { mapState } from 'vuex';
 
-import meta from '~~/mixins/meta';
+import meta from '~/meta';
 
 import Home from '~~/generic/templates/Home';
 import Generic from '~~/generic/templates/Generic';

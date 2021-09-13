@@ -1,0 +1,15 @@
+export default [
+  '~/plugins/whpptPlugins.js',
+  // '~/plugins/components.js',
+  // '~/plugins/layouts.js',
+  // '~/plugins/vue-select.js',
+  '~/plugins/focusLock.js',
+  '~/plugins/lazyLoad.js',
+  '~/plugins/logger.js',
+  // '~/plugins/vuelidate.js',
+  { src: 'plugins/progressiveImage.js', mode: 'client' },
+  // { src: 'plugins/stickyDirective.js', mode: 'client' },
+  // { src: '~/plugins/lineClamp.js', mode: 'client' },
+  // { src: '~/plugins/vueAwesomeSwiper.js', mode: 'client' },
+  // { src: '~/plugins/gMaps.js', mode: 'client' },
+];

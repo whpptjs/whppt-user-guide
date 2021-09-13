@@ -12,7 +12,7 @@ const mixin = {
         (page && page.title) || (page.header && page.header.title) || (site && site.title) || '',
         { wordWrap: false }
       ),
-      titleTemplate: '%s | Uniting Communities',
+      titleTemplate: '%s | Whppt User Guide',
       meta: [
         {
           hid: 'description',
