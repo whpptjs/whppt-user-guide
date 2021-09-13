@@ -1,10 +1,12 @@
-import components from '../components/components';
+import { Components } from '@whppt/nuxt/lib/plugins/Components';
+
+// import components from '../components/components';
 
 export default {
   name: 'page',
   label: 'Generic',
   collection: { name: 'pages' },
-  components,
+  components: Components,
   templates: [
     {
       key: 'generic',

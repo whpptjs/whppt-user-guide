@@ -2212,15 +2212,16 @@
     lodash "^4.17.20"
     vuex "^3.5.1"
 
-"@whppt/nuxt@2.0.0-rc53":
-  version "2.0.0-rc53"
-  resolved "https://registry.yarnpkg.com/@whppt/nuxt/-/nuxt-2.0.0-rc53.tgz#4f7a832cc645a84aebddfaac16b758affe32ae4a"
-  integrity sha512-YIZekpeCBm/Qv5L7GzF3DFXJZLy6luaI6FmhTSyymgs/mqpwU8lKtr6wlE1S6a1hmN2SACDG9uK1A4x0Rgj3NA==
+"@whppt/nuxt@2.0.0-rc54", "@whppt/nuxt@next":
+  version "2.0.0-rc54"
+  resolved "https://registry.yarnpkg.com/@whppt/nuxt/-/nuxt-2.0.0-rc54.tgz#b43be46cbf605683da1cfb90759a39e183fe9afd"
+  integrity sha512-pvIKh68oaE1J0NK8APZca0eeV/lxeLRNyv8HbOvpOUDxJjxZ4yYLIknbRct+d9Ra+Jaul2Cz0j6uGRU6fQuWpA==
   dependencies:
     "@nuxtjs/toast" "^3.3.0"
     axios "^0.21.1"
     dayjs "^1.9.4"
     deep-object-diff "^1.1.0"
+    get-hrefs "^4.0.0"
     js-cookie "^2.2.1"
     lodash "^4.17.15"
     nanoid "^3.1.23"
@@ -2257,31 +2258,6 @@
     vue-croppa "^1.3.8"
     vue-deepset "^0.6.3"
     vue-lazyload "^1.3.3"
-    vuex "^3.1.2"
-
-"@whppt/nuxt@next":
-  version "2.0.0-rc54"
-  resolved "https://registry.yarnpkg.com/@whppt/nuxt/-/nuxt-2.0.0-rc54.tgz#b43be46cbf605683da1cfb90759a39e183fe9afd"
-  integrity sha512-pvIKh68oaE1J0NK8APZca0eeV/lxeLRNyv8HbOvpOUDxJjxZ4yYLIknbRct+d9Ra+Jaul2Cz0j6uGRU6fQuWpA==
-  dependencies:
-    "@nuxtjs/toast" "^3.3.0"
-    axios "^0.21.1"
-    dayjs "^1.9.4"
-    deep-object-diff "^1.1.0"
-    get-hrefs "^4.0.0"
-    js-cookie "^2.2.1"
-    lodash "^4.17.15"
-    nanoid "^3.1.23"
-    node-sass "^4.14.1"
-    slugify "^1.3.6"
-    tiptap "^1.27.1"
-    tiptap-extensions "^1.29.1"
-    v-calendar-ie11 "^1.0.0-beta.16"
-    v-tooltip "^2.0.3"
-    vue "^2.6.11"
-    vue-advanced-cropper "^0.16.1"
-    vue-deepset "^0.6.3"
-    vuelidate "^0.7.6"
     vuex "^3.1.2"
 
 "@whppt/sitemaps@^1.0.0-rc6":
