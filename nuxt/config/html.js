@@ -30,7 +30,6 @@ export default {
   css: [
     // { src: '~assets/css/fonts.css', preload: true },
     { src: '~assets/css/tailwind.css' },
-    // { src: '~/assets/css/richText.scss' },
-    // 'vue-select/src/scss/vue-select.scss',
+    { src: '~/assets/css/richText.scss' },
   ],
 };

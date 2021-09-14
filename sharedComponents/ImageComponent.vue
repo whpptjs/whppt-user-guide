@@ -9,17 +9,16 @@
               width: 1600,
               height: 900,
               quality: 2,
-              aspectRatio: 16 / 9,
             },
           })
         "
-        class="aspect-ratio-16/9 relative"
-        :class="{ 'bg-gray-200': !content.image.imageId }"
+        :class="{ 'bg-gray-200 aspect-ratio-16/9': !content.image.imageId }"
       >
         <img
-          v-lazy="$whppt.getImage(content.image.imageId, 1600, 900, content.image.desktop)"
+          v-if="content.image.imageId"
+          v-lazy="$whppt.getImage(content.image.imageId, '', '', { crop: content.image.desktop })"
           :key="content.image.imageId"
-          class="absolute inset-0 w-full h-full"
+          class="w-full"
         />
       </div>
     </div>

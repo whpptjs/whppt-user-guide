@@ -17,6 +17,10 @@ html {
   .quick-transition {
     @apply transition ease-in-out duration-300;
   }
+
+  .nav-spacer {
+    @apply mt-16;
+  }
 }
 
 /* purgecss start ignore */

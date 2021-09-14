@@ -1,19 +1,40 @@
 <template>
   <footer class="bg-gray-600 w-full py-8 text-white">
-    <div class="container flex">
-      <div class="w-2/12" />
-      <div class="w-10/12">Footer</div>
+    <div v-whppt-list="{ data: footer, addNew }" data-property="groups" class="container" :class="{ 'py-4': inEditor }">
+      <div v-if="footer.groups.length">
+        <div class="flex flex-wrap">
+          <div v-for="(group, index) in footer.groups" :key="index" class="mb-4 w-1/4">
+            <div class="mx-4">
+              <FooterLinkGroup :group="group" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-else>Add groups Here</div>
     </div>
   </footer>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters, mapActions } from 'vuex';
+
+import FooterLinkGroup from './FooterLinkGroup.vue';
 
 export default {
   name: 'Footer',
+  components: { FooterLinkGroup },
   computed: {
     ...mapState('whppt/site', ['footer']),
+    ...mapGetters(['inEditor']),
+  },
+  methods: {
+    ...mapActions('whppt/editor', ['pushSelectedComponentState']),
+    addNew() {
+      this.pushSelectedComponentState({
+        path: 'groups',
+        value: { name: '', links: [] },
+      });
+    },
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="fixed w-full z-20 top-0 h-16 py-2 px-4 flex bg-white shadow"
+    class="fixed w-full z-20 top-0 h-16 py-2 flex bg-white shadow"
     :class="[!navVisible ? 'nav-hidden' : 'nav-visible']"
   >
     <div class="container">
@@ -24,7 +24,7 @@ export default {
   data: () => {
     return {
       navVisible: true,
-      scrollPadding: 16,
+      scrollPadding: 56,
       scrollPosition: 0,
       scrollDirection: 'down',
       scrollTransparent: true,

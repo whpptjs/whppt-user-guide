@@ -1,7 +1,7 @@
 <template>
-  <div class="relative mt-16 xl:mt-20">
+  <div class="relative mt-16">
     <home-header :header="page.header" />
-    <w-content :content-items="page.contents" style="min-height: 200px" class="page-contents" />
+    <w-content :content-items="page.contents" style="min-height: 200px" class="page-contents container" />
   </div>
 </template>
 
