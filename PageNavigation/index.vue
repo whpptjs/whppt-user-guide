@@ -1,6 +1,11 @@
 <template>
   <div v-sticky="stickyOptions">
-    <div class="px-2 pb-4">
+    <div class="h-16 py-2">
+      <nuxt-link to="/" class="inline-block h-full">
+        <img src="/whpptLogo.png" class="h-full" />
+      </nuxt-link>
+    </div>
+    <div class="pr-2 pb-4 relative">
       <div v-whppt-list="{ data: nav, addNew }" data-property="items">
         <div v-if="nav.items.length">
           <div v-for="(item, index) in nav.items" :key="index" class="my-1">
@@ -34,7 +39,7 @@ export default {
   }),
   created() {
     this.stickyOptions = {
-      topSpacing: 64,
+      topSpacing: 0,
     };
   },
   computed: {
