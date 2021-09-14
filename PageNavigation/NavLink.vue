@@ -5,7 +5,7 @@
   >
     <whppt-link v-whppt-link="item.link" :to="item.link">
       <div>
-        {{ item.link.text || 'Item Name' }}
+        {{ item.link.text || 'Link text' }}
       </div>
     </whppt-link>
   </div>
