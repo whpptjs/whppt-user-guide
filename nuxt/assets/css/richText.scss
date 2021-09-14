@@ -1,0 +1,90 @@
+.whppt-rich-text p {
+  strong {
+    @apply font-bold;
+  }
+}
+
+.whppt-formatted-text p {
+  strong {
+    @apply font-bold;
+  }
+}
+.richText {
+  min-height: 1.5em;
+}
+
+.richText p strong {
+  @apply font-bold;
+}
+.whppt-rich-content p:not(:first-child),
+.whppt-rich-text p:not(:first-child),
+.whppt-formatted-text p:not(:first-child),
+.richText p:not(:first-child) {
+  padding-top: 1rem;
+}
+.whppt-rich-content li p,
+.whppt-rich-text li p,
+.richText li p {
+  padding-top: 0px;
+}
+.whppt-rich-content a,
+.whppt-rich-text a,
+.richText a {
+  @apply font-bold underline;
+}
+.whppt-rich-content h2,
+.whppt-rich-text h2,
+.richText h2 {
+  @apply text-2xl;
+  @apply leading-tight;
+}
+.whppt-rich-content h3,
+.whppt-rich-text h3,
+.richText h3 {
+  @apply text-lg;
+  @apply leading-tight;
+}
+.whppt-rich-content ul li,
+.whppt-rich-text ul li,
+.richText ul li {
+  @apply ml-8 pt-4;
+}
+.whppt-rich-content ol li,
+.whppt-rich-text ol li,
+.richText ol li {
+  @apply ml-4 pt-4;
+}
+.whppt-rich-content ol,
+.whppt-rich-text ol,
+.richText ol {
+  @apply text-gray-600;
+  list-style: decimal;
+  list-style-position: outside;
+  padding-left: 1em;
+}
+.whppt-rich-content ul,
+.whppt-rich-text ul,
+.richText ul {
+  @apply text-gray-600;
+  list-style: disc;
+  padding-left: 0;
+}
+
+@screen lg {
+  .whppt-rich-content li,
+  .whppt-rich-text li,
+  .richText li {
+    @apply ml-24;
+  }
+
+  .whppt-rich-content h2,
+  .whppt-rich-text h2,
+  .richText h2 {
+    @apply text-2xl;
+  }
+  .whppt-rich-content h3,
+  .whppt-rich-text h3,
+  .richText h3 {
+    @apply text-xl;
+  }
+}
