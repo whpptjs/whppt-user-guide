@@ -22,7 +22,8 @@ RUN chmod +x ./entrypoint.sh
 RUN yarn
 # RUN npm un sharp
 # RUN npm i sharp
-RUN npm run build
+RUN yarn build
+# RUN npm run build
 
 EXPOSE 3000
 
