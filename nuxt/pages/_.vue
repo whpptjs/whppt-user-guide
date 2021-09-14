@@ -1,7 +1,14 @@
 <template>
   <div class="relative">
     <site-nav />
-    <component :is="page.template" v-if="page" :page="page"></component>
+    <div class="flex mt-16 xl:mt-20">
+      <div class="w-3/12 border-r border-gray-200">
+        <page-navigation />
+      </div>
+      <div class="w-9/12">
+        <component :is="page.template" v-if="page" :page="page"></component>
+      </div>
+    </div>
     <site-footer />
   </div>
 </template>
@@ -16,11 +23,12 @@ import Generic from '~~/generic/templates/Generic';
 import Child from '~~/generic/templates/Child';
 import Contact from '~~/generic/templates/Contact';
 import SiteNav from '~~/Navigation';
+import PageNavigation from '~~/PageNavigation';
 import SiteFooter from '~~/Footer';
 
 export default {
   name: 'MainPage',
-  components: { Generic, Child, Home, Contact, SiteNav, SiteFooter },
+  components: { Generic, Child, Home, Contact, SiteNav, PageNavigation, SiteFooter },
   mixins: [meta],
   scrollToTop: true,
   transition: {

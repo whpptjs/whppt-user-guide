@@ -139,6 +139,7 @@ module.exports = {
         yellow: {
           600: '#f2ac00',
         },
+        primary: '#25c19f',
       },
       backgroundOpacity: {
         5: '0.05',
