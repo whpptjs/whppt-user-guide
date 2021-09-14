@@ -17,8 +17,8 @@
         :class="{ 'bg-gray-200': !content.image.imageId }"
       >
         <img
-          v-lazy="$whppt.getImage(content.image.imageId, 1600, 900, content.image.desktop)"
           :key="content.image.imageId"
+          v-lazy="$whppt.getImage(content.image.imageId, 1600, 900, content.image.desktop)"
           class="absolute inset-0 w-full h-full"
         />
       </div>
