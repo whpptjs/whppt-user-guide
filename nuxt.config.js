@@ -36,6 +36,9 @@ export default {
       ignore: ['**/*.js'],
     },
   ],
+  publicRuntimeConfig: {
+    baseUrl: process.env.BASE_URL,
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -56,7 +59,7 @@ export default {
   toast,
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: { proxy: true },
 
   whppt: {
     defaultMargin: {
