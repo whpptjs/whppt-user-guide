@@ -1,0 +1,10 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41" class="fill-current">
+    <path
+      id="Path_229"
+      data-name="Path 229"
+      d="M7.41,8.59,12,13.17l4.59-4.58L18,10l-6,6L6,10Z"
+      transform="translate(-6 -8.59)"
+    />
+  </svg>
+</template>

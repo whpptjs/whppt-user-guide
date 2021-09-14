@@ -4,4 +4,8 @@ import news from '~~/news/plugin';
 export default ({ app }) => {
   app.$whppt.addPlugin(generic);
   app.$whppt.addPlugin(news);
+
+  app.$whppt.initNav = ({ $set }, nav) => {
+    if (!nav.items) $set(nav, 'items', []);
+  };
 };
