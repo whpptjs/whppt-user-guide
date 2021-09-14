@@ -7,13 +7,15 @@
       </div>
       <w-content :content-items="page.contents" style="min-height: 200px" class="page-contents w-full" />
     </div>
-    <div class="w-2/12">Getting Started</div>
+    <anchor-list class="w-2/12" :page="page" />
   </div>
 </template>
 
 <script>
+import AnchorList from './AnchorList.vue';
 export default {
   name: 'GenericTemplate',
+  components: { AnchorList },
   props: {
     page: { type: Object, default: () => ({}) },
   },
