@@ -1,6 +1,6 @@
 <template>
-  <div class="relative flex justify-between w-full container">
-    <div class="w-8/12 pt-8">
+  <div class="relative flex justify-between w-full">
+    <div class="w-10/12 pt-8">
       <div v-whppt-text="page.header" data-property="title" class="font-extrabold text-3xl container mb-8">
         {{ page.header.title || 'Title' }}
       </div>

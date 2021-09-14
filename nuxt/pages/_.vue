@@ -1,11 +1,11 @@
 <template>
   <div class="relative">
     <site-nav />
-    <div class="flex mt-16 xl:mt-20">
-      <div class="w-3/12 border-r border-gray-200">
+    <div class="flex mt-16">
+      <div class="w-3/12 border-r border-gray-200 pt-4">
         <page-navigation />
       </div>
-      <div class="w-9/12">
+      <div class="w-9/12 container">
         <component :is="page.template" v-if="page" :page="page"></component>
       </div>
     </div>
