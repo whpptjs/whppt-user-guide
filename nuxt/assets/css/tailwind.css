@@ -13,6 +13,12 @@ html {
   }
 }
 
+@layer utilities {
+  .quick-transition {
+    @apply transition ease-in-out duration-300;
+  }
+}
+
 /* purgecss start ignore */
 .page-leave-active,
 .page-enter-active {

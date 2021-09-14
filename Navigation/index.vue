@@ -1,5 +1,8 @@
 <template>
-  <nav class="fixed w-full z-20 top-0 h-16 py-2 px-4 flex">
+  <nav
+    class="fixed w-full z-20 top-0 h-16 py-2 px-4 flex bg-white shadow"
+    :class="[!navVisible ? 'nav-hidden' : 'nav-visible']"
+  >
     <div class="container">
       <NuxtLink to="/" class="inline-block h-full">
         <img src="/whpptLogo.png" class="h-full" />
@@ -9,8 +12,7 @@
 </template>
 
 <script>
-import { throttle, find } from 'lodash';
-import { mapState } from 'vuex';
+import { throttle } from 'lodash';
 export default {
   name: 'NavigationBar',
   props: {
@@ -22,21 +24,12 @@ export default {
   data: () => {
     return {
       navVisible: true,
-      scrollPadding: 128,
+      scrollPadding: 16,
       scrollPosition: 0,
       scrollDirection: 'down',
       scrollTransparent: true,
     };
   },
-  computed: {
-    ...mapState('whppt/site', ['siteSettings']),
-    ...mapState('whppt/page', ['page']),
-    subNav() {
-      if (!this.page) return;
-      return find(this.siteSettings.brands, { id: this.page.brandId });
-    },
-  },
-
   mounted() {
     window.addEventListener('scroll', throttle(this.onScroll, 200));
   },
@@ -68,3 +61,19 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.nav-visible {
+  transition: 0.2s ease;
+  opacity: 1;
+}
+
+.nav-hidden {
+  transition-delay: 1s, 0s;
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+</style>
