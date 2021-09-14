@@ -2,7 +2,7 @@
   <div class="relative">
     <site-nav />
     <div class="flex mt-16">
-      <div class="w-3/12 border-r border-gray-200 pt-4">
+      <div class="w-3/12 border-r border-gray-200">
         <page-navigation />
       </div>
       <div class="w-9/12 container">

@@ -24,7 +24,7 @@ export default {
   data: () => {
     return {
       navVisible: true,
-      scrollPadding: 16,
+      scrollPadding: 56,
       scrollPosition: 0,
       scrollDirection: 'down',
       scrollTransparent: true,

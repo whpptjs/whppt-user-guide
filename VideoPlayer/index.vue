@@ -22,7 +22,7 @@
         class="absolute right-0 top-0 mr-4 md:-mr-8 -mt-10"
         @click="closeVideoPlayer"
       >
-        <icon icon="Close" class="text-white" />
+        <icon icon="Close" class="text-white w-8 h-8" />
       </button>
     </div>
   </div>

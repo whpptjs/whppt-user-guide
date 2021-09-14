@@ -1677,6 +1677,14 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.20.tgz#111b5db0f501aa89b05076fa31f0ea0e0c292cd3"
   integrity sha512-88p7+M0QGxKpmnkfXjS4V26AnoC/eiqZutE8GLdaI5X12NY75bXSdTY9NkmYb2Xyk1O+MmkuO6Frmsj84V6I8Q==
 
+"@renatodeleao/vue-sticky-directive@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@renatodeleao/vue-sticky-directive/-/vue-sticky-directive-0.3.0.tgz#da1b9496eb302a96409b8edb68ef3682e08d9bc0"
+  integrity sha512-aziLifdFuTOq/QgzqPYWc4O4FOa7ASSP3LW6GVaxHGBa4Y33jejmVNOp0t7S1P+FIkscyqy/cKF63B39gQcPYg==
+  dependencies:
+    resize-sensor "0.0.6"
+    sticky-sidebar "git+https://github.com/abouolia/sticky-sidebar.git#master"
+
 "@tokenizer/token@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@tokenizer/token/-/token-0.1.1.tgz#f0d92c12f87079ddfd1b29f614758b9696bc29e3"
@@ -10231,6 +10239,11 @@ reserved-words@^0.1.2:
   resolved "https://registry.yarnpkg.com/reserved-words/-/reserved-words-0.1.2.tgz#00a0940f98cd501aeaaac316411d9adc52b31ab1"
   integrity sha1-AKCUD5jNUBrqqsMWQR2a3FKzGrE=
 
+resize-sensor@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/resize-sensor/-/resize-sensor-0.0.6.tgz#75147dcb273de6832760e461d2e28de6dcf88c45"
+  integrity sha512-e+3wwdki9elemYP6AnyG2BK9/Gd7ak46wZN+Z62WwmWfhn2La1XV2rPRRIcar+PhRhfiQDXi29TapGMTIbI3Pg==
+
 resolve-from@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-2.0.0.tgz#9480ab20e94ffa1d9e80a804c7ea147611966b57"
@@ -10947,6 +10960,10 @@ stdout-stream@^1.4.0:
   integrity sha512-j4emi03KXqJWcIeF8eIXkjMFN1Cmb8gUlDYGeBALLPo5qdyTfA9bOtl8m33lRoC+vFMkP3gl0WsDr6+gzxbbTA==
   dependencies:
     readable-stream "^2.0.1"
+
+"sticky-sidebar@git+https://github.com/abouolia/sticky-sidebar.git#master":
+  version "3.3.1"
+  resolved "git+https://github.com/abouolia/sticky-sidebar.git#bcd40bbf95e84b75916bc3535d7475447f9383f8"
 
 stream-browserify@^2.0.1:
   version "2.0.2"

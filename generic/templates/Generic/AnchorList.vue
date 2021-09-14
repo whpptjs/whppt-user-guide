@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-sticky="stickyOptions">
     <div class="border-l border-gray-300 pl-4">
       <div v-for="anchor in anchors" :key="anchor.id" class="mb-2">
         <whppt-link
@@ -15,10 +15,16 @@
 
 <script>
 import { filter } from 'lodash';
+
 export default {
   name: 'GenericTemplateAnchorList',
   props: {
     page: { type: Object, default: () => ({}) },
+  },
+  created() {
+    this.stickyOptions = {
+      topSpacing: 96,
+    };
   },
   computed: {
     anchors() {
