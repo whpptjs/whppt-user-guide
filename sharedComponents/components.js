@@ -1,5 +1,5 @@
 import { Components } from '@whppt/nuxt/lib/plugins/Components';
 
-import { imageComponent } from './definitions/index';
+import { imageComponent, youtube } from './definitions/index';
 
-export default [imageComponent, ...Components];
+export default [imageComponent, youtube, ...Components];
