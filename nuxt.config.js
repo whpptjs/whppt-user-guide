@@ -29,7 +29,13 @@ export default {
   plugins,
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: [{ path: '~/assets/components' }],
+  components: [
+    { path: '~/assets/components' },
+    {
+      path: '~~/sharedComponents',
+      ignore: ['**/*.js'],
+    },
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -55,7 +61,7 @@ export default {
   whppt: {
     defaultMargin: {
       top: { base: 0, sm: 0, lg: 0 },
-      bottom: { base: 2, sm: 2, lg: 2 },
+      bottom: { base: 1, sm: 1, lg: 1 },
     },
   },
 

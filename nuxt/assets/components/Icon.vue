@@ -3,11 +3,13 @@
 </template>
 
 <script>
+import Play from '~/assets/icons/Play';
 import ChevronDown from '~/assets/icons/ChevronDown';
 
 export default {
   name: 'Icon',
   components: {
+    Play,
     ChevronDown,
   },
   props: {

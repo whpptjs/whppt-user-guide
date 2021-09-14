@@ -36,16 +36,22 @@ export default {
   },
   asyncData({ params, store, error, app: { $whppt } }) {
     if (params.pathMatch === 'page/loadPage') return;
-    return Promise.all([
-      store.dispatch('whppt/page/loadPage', { slug: params.pathMatch, pageType: 'page', collection: 'pages' }),
-      store.dispatch('whppt/site/loadSiteSettings'),
-    ]).catch(err => {
-      error({
-        statusCode: (err.response && err.response.status) || 500,
-        message: (err.response && err.response.statusText) || 'Unknown Error',
-        stack: err.stack,
-      });
-    });
+    return (
+      Promise.all([
+        store.dispatch('whppt/page/loadPage', { slug: params.pathMatch, pageType: 'page', collection: 'pages' }),
+        store.dispatch('whppt/site/loadSiteSettings'),
+      ])
+        // .then(([page, siteSettings]) => {
+        //   return { page, siteSettings };
+        // })
+        .catch(err => {
+          error({
+            statusCode: (err.response && err.response.status) || 500,
+            message: (err.response && err.response.statusText) || 'Unknown Error',
+            stack: err.stack,
+          });
+        })
+    );
   },
   computed: {
     ...mapState('whppt/page', ['page']),
