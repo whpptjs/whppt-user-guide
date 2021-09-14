@@ -12,7 +12,7 @@ export default {
       key: 'generic',
       label: 'Generic',
       init: ({ $set }, page) => {
-        if (!page.header) $set(page, 'header', { breadcrumb: [] });
+        if (!page.header) $set(page, 'header', { title: '' });
         if (!page.contents) $set(page, 'contents', []);
 
         return page;
