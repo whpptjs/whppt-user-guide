@@ -1,7 +1,7 @@
 <template>
   <nav class="fixed w-full z-20 top-0 h-16 py-2 px-4 flex">
-    <div class="h-full container">
-      <NuxtLink to="/">
+    <div class="container">
+      <NuxtLink to="/" class="inline-block h-full">
         <img src="/whpptLogo.png" class="h-full" />
       </NuxtLink>
     </div>
