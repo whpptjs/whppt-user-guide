@@ -21,26 +21,6 @@
           class="w-full"
         />
       </div>
-      <!-- <div
-        v-whppt-image="content"
-        :data-sizes="
-          JSON.stringify({
-            desktop: {
-              width: 1600,
-              height: 900,
-              quality: 2,
-            },
-          })
-        "
-        class="aspect-ratio-16/9 relative"
-        :class="{ 'bg-gray-200': !content.image.imageId }"
-      >
-        <img
-          v-lazy="$whppt.getImage(content.image.imageId, '', '', { crop: content.image.desktop })"
-          :key="content.image.imageId"
-          class="absolute inset-0 w-full"
-        />
-      </div> -->
     </div>
   </section>
 </template>

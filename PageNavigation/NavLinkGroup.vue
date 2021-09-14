@@ -18,7 +18,7 @@
       @click="$emit('openItem', itemIdx)"
     >
       <div>
-        {{ item.link.text || 'Item Name' }}
+        {{ item.link.text || 'Link text' }}
       </div>
       <icon icon="ChevronDown" class="w-3 h-3 arrow" :class="subItemsOpen ? 'arrow-up' : 'arrow-down'" />
     </button>

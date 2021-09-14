@@ -8,4 +8,8 @@ export default ({ app }) => {
   app.$whppt.initNav = ({ $set }, nav) => {
     if (!nav.items) $set(nav, 'items', []);
   };
+
+  app.$whppt.initFooter = ({ $set }, footer) => {
+    if (!footer.groups) $set(footer, 'groups', []);
+  };
 };
