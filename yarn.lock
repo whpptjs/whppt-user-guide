@@ -2220,10 +2220,10 @@
     lodash "^4.17.20"
     vuex "^3.5.1"
 
-"@whppt/nuxt@2.0.0-rc55":
-  version "2.0.0-rc55"
-  resolved "https://registry.yarnpkg.com/@whppt/nuxt/-/nuxt-2.0.0-rc55.tgz#50d32a804506d4ff08897b3d377fbcc2a25ef2b7"
-  integrity sha512-v8Wwncvt4aQZFlH/LcO9a7mXbmN+e6XPdsK5Lp2iZaO6WxnUwkplUH9R3nv2NqvMi335C1Q1l8euBemZ/++LiQ==
+"@whppt/nuxt@2.0.0-rc56":
+  version "2.0.0-rc56"
+  resolved "https://registry.yarnpkg.com/@whppt/nuxt/-/nuxt-2.0.0-rc56.tgz#98d8b758bf7bc4510463f977f084021d0446d281"
+  integrity sha512-68R8JFsmpP5LMXW0CNcHwmn0AxGmb3H800R3DxX7qONOOIyadPulGx5hHsIjRTD5u0uHNV72lbgTGHDwEvxMIg==
   dependencies:
     "@nuxtjs/toast" "^3.3.0"
     axios "^0.21.1"
