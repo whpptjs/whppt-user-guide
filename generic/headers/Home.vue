@@ -7,9 +7,39 @@
           <div v-whppt-text="header" data-property="title" class="text-3xl font-bold">
             {{ header.title || 'Title' }}
           </div>
-          <button class="bg-primary rounded-lg text-center font-bold px-8 py-2 text-lg mt-8">Get Started</button>
+          <div class="flex mt-8">
+            <whppt-link
+              v-if="header.primaryLink.href || inEditor"
+              v-whppt-link="header.primaryLink"
+              :to="header.primaryLink"
+            >
+              <div class="bg-primary rounded-lg text-center font-bold px-8 py-2 text-lg">
+                {{ header.primaryLink.text || 'Primary button' }}
+              </div>
+            </whppt-link>
+          </div>
         </div>
-        <div class="w-2/12"><img src="/whpptLogo.png" class="h-32" /></div>
+        <div class="w-2/12">
+          <div
+            v-whppt-image="header"
+            :data-sizes="
+              JSON.stringify({
+                desktop: {
+                  width: 900,
+                  height: 900,
+                  quality: 2,
+                },
+              })
+            "
+            :class="{ 'bg-gray-200 aspect-ratio-square': !header.image.imageId || inEditor }"
+          >
+            <img
+              v-if="header.image.imageId"
+              v-lazy="$whppt.getImage(header.image.imageId, '', '', { crop: header.image.desktop })"
+              class="w-full"
+            />
+          </div>
+        </div>
         <div class="w-1/12" />
       </div>
     </div>
