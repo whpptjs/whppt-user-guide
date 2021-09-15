@@ -10,9 +10,7 @@
       <div v-whppt-list="{ data: nav, addNew }" data-property="side">
         <div v-if="nav.side.length">
           <div v-for="(item, index) in nav.side" :key="index" class="my-1">
-            <NavLink v-if="item.link.href" :item="item" />
             <NavLinkGroup
-              v-else
               :item="item"
               :item-idx="index"
               :sub-items-open="openItemIdx === index"
@@ -29,12 +27,11 @@
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex';
 
-import NavLink from './NavLink';
 import NavLinkGroup from './NavLinkGroup';
 
 export default {
   name: 'PageNavigation',
-  components: { NavLink, NavLinkGroup },
+  components: { NavLinkGroup },
   data: () => ({
     openItemIdx: undefined,
   }),

@@ -21,7 +21,12 @@
           class="w-full"
         />
       </div>
-      <div v-if="content.caption || inEditor" v-whppt-text="content" data-property="caption" class="italic mt-2">
+      <div
+        v-if="content.caption || inEditor"
+        v-whppt-text="content"
+        data-property="caption"
+        class="italic mt-2 text-sm"
+      >
         {{ content.caption || 'Caption' }}
       </div>
     </div>

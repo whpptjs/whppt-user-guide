@@ -64,7 +64,7 @@ export default {
   whppt: {
     defaultMargin: {
       top: { base: 0, sm: 0, lg: 0 },
-      bottom: { base: 1, sm: 1, lg: 1 },
+      bottom: { base: 2, sm: 2, lg: 2 },
     },
   },
 
