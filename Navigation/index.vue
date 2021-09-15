@@ -25,7 +25,7 @@
             {{ item.text || 'Link Text' }}
           </whppt-link>
         </div>
-        <div v-else>Add Nav Items Here</div>
+        <div v-if="nav.top.length === 0 && inEditor">Add Nav Items Here</div>
       </div>
     </div>
   </nav>

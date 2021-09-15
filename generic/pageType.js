@@ -17,32 +17,6 @@ export default {
       },
     },
     {
-      key: 'contact',
-      label: 'Contact',
-      init: ({ $set }, page) => {
-        if (!page.header) $set(page, 'header', { breadcrumb: [] });
-
-        if (!page.contacts)
-          $set(page, 'contacts', {
-            items: [],
-          });
-
-        if (!page.contents) $set(page, 'contents', []);
-
-        return page;
-      },
-    },
-    {
-      key: 'child',
-      label: 'Child',
-      init: ({ $set }, page) => {
-        if (!page.header) $set(page, 'header', { breadcrumb: [] });
-        if (!page.contents) $set(page, 'contents', []);
-
-        return page;
-      },
-    },
-    {
       key: 'home',
       label: 'Home',
       init: ({ $set }, page) => {

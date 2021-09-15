@@ -5,20 +5,17 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
 const genericPageType = require('../generic/pageType').default;
-const newsPageType = require('../news/pageType').default;
 
 const security = require('./security');
-const news = require('./news');
 
 const { corsOptions } = require('./cors');
 
 const options = {
   modules: {
-    news,
     sitemap: { filter: sitemap.serverModule },
   },
   security,
-  pageTypes: [genericPageType, newsPageType],
+  pageTypes: [genericPageType],
 };
 
 const app = express();

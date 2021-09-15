@@ -13,14 +13,12 @@ import meta from '~/meta';
 
 import Home from '~~/generic/templates/Home';
 import Generic from '~~/generic/templates/Generic';
-import Child from '~~/generic/templates/Child';
-import Contact from '~~/generic/templates/Contact';
 import SiteNav from '~~/Navigation';
 import SiteFooter from '~~/Footer';
 
 export default {
   name: 'MainPage',
-  components: { Generic, Child, Home, Contact, SiteNav, SiteFooter },
+  components: { Generic, Home, SiteNav, SiteFooter },
   mixins: [meta],
   scrollToTop: true,
   transition: {

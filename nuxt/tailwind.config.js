@@ -183,7 +183,6 @@ module.exports = {
       './editors/**/*.vue',
       './siteSettings/**/*.vue',
       './generic/**/*.vue',
-      './news/**/*.vue',
       '@whppt/nuxt/lib/**/*.js',
       '@whppt/nuxt/lib/**/*.vue',
       './.nuxt/whppt-nuxt/**/*.js',
