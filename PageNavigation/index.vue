@@ -1,8 +1,9 @@
 <template>
   <div v-sticky="stickyOptions">
     <div class="h-16 py-2">
-      <nuxt-link to="/" class="inline-block h-full">
+      <nuxt-link to="/" class="inline-flex h-full items-center">
         <img src="/whpptLogo.png" class="h-full" />
+        <span class="ml-2 font-bold text-lg">Whppt</span>
       </nuxt-link>
     </div>
     <div class="pr-2 pb-4 relative">
