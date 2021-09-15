@@ -1,12 +1,6 @@
 <template>
   <div v-sticky="stickyOptions">
-    <div class="h-16 py-2">
-      <nuxt-link to="/" class="inline-flex h-full items-center">
-        <img src="/whpptLogo.png" class="h-full" />
-        <span class="ml-2 font-bold text-lg">Whppt</span>
-      </nuxt-link>
-    </div>
-    <div class="pr-2 pb-4 relative">
+    <div class="pr-2 pb-4 mt-24 relative">
       <div v-whppt-list="{ data: nav, addNew }" data-property="side" :class="{ 'py-4': inEditor }">
         <div v-if="nav.side.length">
           <div v-for="(item, index) in nav.side" :key="index" class="my-1">
