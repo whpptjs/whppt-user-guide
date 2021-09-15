@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative text-text">
     <site-nav />
     <component :is="page.template" v-if="page" :page="page"></component>
     <site-footer />

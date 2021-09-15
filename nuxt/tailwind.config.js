@@ -140,6 +140,7 @@ module.exports = {
           600: '#f2ac00',
         },
         primary: '#25c19f',
+        text: '#1c1e21',
       },
       backgroundOpacity: {
         5: '0.05',
