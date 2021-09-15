@@ -7,7 +7,7 @@
       </nuxt-link>
     </div>
     <div class="pr-2 pb-4 relative">
-      <div v-whppt-list="{ data: nav, addNew }" data-property="side">
+      <div v-whppt-list="{ data: nav, addNew }" data-property="side" :class="{ 'py-4': inEditor }">
         <div v-if="nav.side.length">
           <div v-for="(item, index) in nav.side" :key="index" class="my-1">
             <NavLinkGroup
