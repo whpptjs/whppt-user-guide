@@ -6,9 +6,9 @@
       </nuxt-link>
     </div>
     <div class="pr-2 pb-4 relative">
-      <div v-whppt-list="{ data: nav, addNew }" data-property="items">
-        <div v-if="nav.items.length">
-          <div v-for="(item, index) in nav.items" :key="index" class="my-1">
+      <div v-whppt-list="{ data: nav, addNew }" data-property="side">
+        <div v-if="nav.side.length">
+          <div v-for="(item, index) in nav.side" :key="index" class="my-1">
             <NavLink v-if="item.link.href" :item="item" />
             <NavLinkGroup
               v-else
@@ -53,7 +53,7 @@ export default {
     },
     addNew() {
       this.pushSelectedComponentState({
-        path: 'items',
+        path: 'side',
         value: {
           link: { type: 'page' },
           subItems: [],

@@ -19,7 +19,7 @@
     "@whppt/api-express": "2.0.0-rc33",
     "@whppt/form-builder": "2.1.5",
     "@whppt/layouts": "^1.0.0-rc7",
-    "@whppt/nuxt": "2.0.0-rc54",
+    "@whppt/nuxt": "2.0.0-rc55",
     "@whppt/sitemaps": "^1.0.0-rc6",
     "cookie-parser": "^1.4.5",
     "core-js": "^3.8.3",
