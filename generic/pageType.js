@@ -48,7 +48,7 @@ export default {
       init: ({ $set }, page) => {
         if (!page.header) $set(page, 'header', {});
         if (!page.header.primaryLink) $set(page.header, 'primaryLink', { type: 'page', href: '' });
-        if (!page.header) $set(page.header, 'image', { imageId: '' });
+        if (!page.header.image) $set(page.header, 'image', { imageId: '' });
 
         if (!page.contents) $set(page, 'contents', []);
 
