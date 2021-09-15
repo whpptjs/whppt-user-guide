@@ -37,14 +37,14 @@ export default {
   data: () => ({
     openItemIdx: undefined,
   }),
+  computed: {
+    ...mapState('whppt/site', ['nav']),
+    ...mapGetters(['inEditor']),
+  },
   created() {
     this.stickyOptions = {
       topSpacing: 0,
     };
-  },
-  computed: {
-    ...mapState('whppt/site', ['nav']),
-    ...mapGetters(['inEditor']),
   },
   methods: {
     ...mapActions('whppt/editor', ['pushSelectedComponentState']),
