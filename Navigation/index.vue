@@ -27,6 +27,8 @@
         </div>
         <div v-if="nav.top.length === 0 && inEditor">Add Nav Items Here</div>
       </div>
+      <User v-if="client" />
+      <PrimaryButton v-else @click="$router.push('/login')">Login</PrimaryButton>
     </div>
   </nav>
 </template>
@@ -34,8 +36,12 @@
 <script>
 import { throttle } from 'lodash';
 import { mapState, mapActions, mapGetters } from 'vuex';
+
+import User from '~/assets/components/User';
+
 export default {
   name: 'NavigationBar',
+  components: { User },
   props: {
     compact: {
       type: Boolean,
@@ -51,7 +57,7 @@ export default {
       scrollTransparent: true,
     };
   },
-  computed: { ...mapState('whppt/site', ['nav']), ...mapGetters(['inEditor']) },
+  computed: { ...mapState('whppt/site', ['nav']), ...mapGetters(['inEditor']), ...mapState('client', ['client']) },
   mounted() {
     window.addEventListener('scroll', throttle(this.onScroll, 200));
   },

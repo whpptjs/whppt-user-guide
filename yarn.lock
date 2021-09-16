@@ -2109,10 +2109,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@whppt/api-express@2.0.0-rc33":
-  version "2.0.0-rc33"
-  resolved "https://registry.yarnpkg.com/@whppt/api-express/-/api-express-2.0.0-rc33.tgz#0cc822e98c74a4a416fa33bf624d4ef59b8e1189"
-  integrity sha512-9vEQsYufO52HhUMD5BeIBGDhz+8pAIf9PzpSv8HZ+DAREIWXPn65nXl5Y4L+HgIWYZxVhVq5LWRuZP2vh9IgYA==
+"@whppt/api-express@2.0.0-rc37":
+  version "2.0.0-rc37"
+  resolved "https://registry.yarnpkg.com/@whppt/api-express/-/api-express-2.0.0-rc37.tgz#b812de90fcaa69c627b6f657ae92faf33b553b22"
+  integrity sha512-D3cFxFGSW3HZ97RMjkudt9miFRe9fUO4GXX5HYdURxaGJzEDmavbXrlJc4luQb3KFUSBdAuXofLRSAQa+sQesQ==
   dependencies:
     "@types/jest" "^26.0.15"
     aws-sdk "^2.616.0"
@@ -6817,6 +6817,11 @@ js-cookie@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.1.tgz#69e106dc5d5806894562902aa5baec3744e9b2b8"
   integrity sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==
+
+js-cookie@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-3.0.1.tgz#9e39b4c6c2f56563708d7d31f6f5f21873a92414"
+  integrity sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==
 
 js-tokens@^4.0.0:
   version "4.0.0"

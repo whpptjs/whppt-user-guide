@@ -5,6 +5,10 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
 const genericPageType = require('../generic/pageType').default;
+const clientPageType = require('../ClientPages/pageType').default;
+
+const clientQueries = require('../ClientPages/lib/api/queries');
+const clientCommands = require('../ClientPages/lib/api/commands');
 
 const security = require('./security');
 
@@ -13,9 +17,10 @@ const { corsOptions } = require('./cors');
 const options = {
   modules: {
     sitemap: { filter: sitemap.serverModule },
+    client: { ...clientQueries, ...clientCommands },
   },
   security,
-  pageTypes: [genericPageType],
+  pageTypes: [genericPageType, clientPageType],
 };
 
 const app = express();

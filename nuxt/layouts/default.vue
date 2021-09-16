@@ -10,16 +10,21 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters, mapActions } from 'vuex';
 import VideoPlayer from '~~/VideoPlayer';
 
 export default {
   name: 'DefaultLayout',
   components: { VideoPlayer },
-
   computed: {
     ...mapState('whppt/page', ['page']),
     ...mapGetters('videoPlayer', ['showVideoPlayer']),
+  },
+  mounted() {
+    this.loadMe();
+  },
+  methods: {
+    ...mapActions('client', ['loadMe']),
   },
 };
 </script>
