@@ -1,7 +1,9 @@
 import generic from '~~/generic/plugin';
 import clientPages from '~~/ClientPages/plugin';
+import clientSettings from '~~/siteSettings/clientSettings';
 
 export default ({ app }) => {
+  app.$whppt.addPlugin(clientSettings);
   app.$whppt.addPlugin(generic);
   app.$whppt.addPlugin(clientPages);
 
