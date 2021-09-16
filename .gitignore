@@ -3,7 +3,7 @@
 ### Node template
 
 # Logs
-
+/mongo/db_backup
 /logs
 _.log
 npm-debug.log_
