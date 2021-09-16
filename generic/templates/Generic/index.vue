@@ -3,7 +3,7 @@
     <div class="container lg:w-64 block lg:border-r border-gray-200 mb-8">
       <PageNavigation />
     </div>
-    <div class="container lg:nav-spacer flex-1">
+    <div class="container lg:mt-24 flex-1">
       <anchor-list-drop-down class="block lg:hidden mb-8" :page="page" />
       <div class="flex">
         <div class="w-full lg:w-3/4 pb-12">
