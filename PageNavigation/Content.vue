@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import { filter } from 'lodash';
 import { mapState, mapActions, mapGetters } from 'vuex';
 
 import NavLinkGroup from './NavLinkGroup';
@@ -34,46 +33,22 @@ export default {
   }),
   computed: {
     ...mapState('whppt/site', ['nav']),
-    ...mapState('whppt/config', ['domain']),
-    ...mapState('whppt/security', ['authUser']),
-    ...mapState('client', ['client']),
     ...mapGetters(['inEditor']),
-    shownClientsWithNavItems() {
-      if (this.authUser) return this.nav.clients;
-      if (this.client) return filter(this.nav.clients, { clientId: this.client._id });
-      return [];
-    },
   },
   created() {
     this.stickyOptions = {
       topSpacing: 0,
       resizeSensor: true,
     };
-    this.loadClients();
   },
   methods: {
     ...mapActions('whppt/editor', ['pushSelectedComponentState', 'setSelectedComponentState']),
     setOpenItem(itemIdx) {
       this.openItemIdx = this.openItemIdx === itemIdx ? undefined : itemIdx;
     },
-    loadClients() {
-      return this.$axios.$get(`/api/client/loadClientsForSelector?domainId=${this.domain._id}`).then(clients => {
-        this.clients = clients;
-      });
-    },
     addNewSideItem() {
       this.pushSelectedComponentState({
         path: 'side',
-        value: {
-          link: { type: 'page' },
-          subItems: [],
-        },
-      });
-    },
-    addNewClientItem() {
-      // if()
-      this.pushSelectedComponentState({
-        path: 'items',
         value: {
           link: { type: 'page' },
           subItems: [],

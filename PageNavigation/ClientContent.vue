@@ -1,8 +1,8 @@
 <template>
-  <div class="px-2">
+  <div>
     <div v-for="clientItem in shownClientsWithNavItems" :key="clientItem.clientId" class="mt-4">
       <div v-if="clientItem.items.length || inEditor">
-        <div class="border-t border-gray-100 pt-4">
+        <div class="border-t border-gray-100 pt-4 pl-2">
           {{ clientItem.username }}
         </div>
         <div
@@ -80,7 +80,6 @@ export default {
       });
     },
     addNewClientItem() {
-      // if()
       this.pushSelectedComponentState({
         path: 'items',
         value: {
