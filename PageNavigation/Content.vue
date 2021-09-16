@@ -1,24 +1,18 @@
 <template>
-  <div>
-    <div class="block lg:hidden">
-      <div class="block mt-24">
-        <div @click="mobileShow = true">
-          <icon icon="Hamburger"></icon>
+  <div v-sticky="stickyOptions">
+    <div class="font-bold text-lg pl-2 mb-4">Guide</div>
+    <div v-whppt-list="{ data: nav, addNew }" data-property="side" :class="{ 'py-4': inEditor }">
+      <div v-if="nav.side.length">
+        <div v-for="(item, index) in nav.side" :key="index" class="my-1">
+          <NavLinkGroup
+            :item="item"
+            :item-idx="index"
+            :sub-items-open="openItemIdx === index"
+            @openItem="setOpenItem"
+          />
         </div>
       </div>
-      <div class="absolute inset-0 px-10 pb-4 bg-white z-2" :class="{ hidden: !mobileShow }">
-        <div class="pt-2">
-          <div class="pb-5 flex justify-end items-center" @click="mobileShow = false">
-            Close
-            <icon icon="Close" class="ml-3"></icon>
-          </div>
-
-          <nav-content></nav-content>
-        </div>
-      </div>
-    </div>
-    <div v-sticky="stickyOptions" class="hidden lg:block">
-      <nav-content></nav-content>
+      <div v-else>Add Items Here</div>
     </div>
   </div>
 </template>
@@ -26,14 +20,13 @@
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex';
 
-import NavContent from './Content';
+import NavLinkGroup from './NavLinkGroup';
 
 export default {
-  name: 'PageNavigation',
-  components: { NavContent },
+  name: 'PageNavigationContent',
+  components: { NavLinkGroup },
   data: () => ({
     openItemIdx: undefined,
-    mobileShow: false,
   }),
   computed: {
     ...mapState('whppt/site', ['nav']),
