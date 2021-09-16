@@ -24,6 +24,7 @@ export default {
   created() {
     this.stickyOptions = {
       topSpacing: 96,
+      resizeSensor: true,
     };
   },
   computed: {

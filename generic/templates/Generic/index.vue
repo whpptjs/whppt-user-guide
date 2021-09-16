@@ -14,12 +14,17 @@
         style="min-height: 200px"
         class="page-contents w-full"
       />
+      <div class="flex justify-end container italic text-sm">
+        <span>Last updated on&nbsp;</span>
+        <span class="font-bold">{{ updatedAt }}</span>
+      </div>
     </div>
     <anchor-list class="hidden lg:block w-2/12 pt-4 nav-spacer" :page="page" />
   </div>
 </template>
 
 <script>
+import dayjs from 'dayjs';
 import AnchorList from './AnchorList.vue';
 import AnchorListDropDown from './AnchorListDropDown.vue';
 import PageNavigation from '~~/PageNavigation';
@@ -29,6 +34,11 @@ export default {
   components: { AnchorList, PageNavigation, AnchorListDropDown },
   props: {
     page: { type: Object, default: () => ({}) },
+  },
+  computed: {
+    updatedAt() {
+      return dayjs(this.page.updatedAt || this.page.createdAt).format('DD-MM-YYYY');
+    },
   },
 };
 </script>

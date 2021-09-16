@@ -22,6 +22,18 @@
 .richText p:not(:first-child) {
   padding-top: 1rem;
 }
+
+.whppt-rich-content h2:not(:first-child),
+.whppt-rich-text h2:not(:first-child),
+.whppt-formatted-text h2:not(:first-child),
+.richText h2:not(:first-child),
+.whppt-rich-content h3:not(:first-child),
+.whppt-rich-text h3:not(:first-child),
+.whppt-formatted-text h3:not(:first-child),
+.richText h3:not(:first-child) {
+  padding-top: 2rem;
+}
+
 .whppt-rich-content li p,
 .whppt-rich-text li p,
 .richText li p {
@@ -35,14 +47,14 @@
 .whppt-rich-content h2,
 .whppt-rich-text h2,
 .richText h2 {
-  @apply text-2xl;
-  @apply leading-tight;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.4rem;
+  @apply text-xl leading-tight font-bold;
 }
 .whppt-rich-content h3,
 .whppt-rich-text h3,
 .richText h3 {
-  @apply text-lg;
-  @apply leading-tight;
+  @apply text-lg leading-tight font-bold;
 }
 .whppt-rich-content ul li,
 .whppt-rich-text ul li,
@@ -80,11 +92,11 @@
   .whppt-rich-content h2,
   .whppt-rich-text h2,
   .richText h2 {
-    @apply text-2xl;
+    @apply text-xl;
   }
   .whppt-rich-content h3,
   .whppt-rich-text h3,
   .richText h3 {
-    @apply text-xl;
+    @apply text-lg;
   }
 }
