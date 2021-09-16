@@ -1,6 +1,7 @@
 <template>
   <div v-sticky="stickyOptions">
     <div class="pr-2 pb-4 mt-24 relative">
+      <div class="font-bold text-lg pl-2 mb-4">Guide</div>
       <div v-whppt-list="{ data: nav, addNew }" data-property="side" :class="{ 'py-4': inEditor }">
         <div v-if="nav.side.length">
           <div v-for="(item, index) in nav.side" :key="index" class="my-1">
