@@ -3,7 +3,7 @@
     class="fixed w-full z-20 top-0 h-16 py-2 flex bg-white shadow"
     :class="[!navVisible ? 'nav-hidden' : 'nav-visible']"
   >
-    <div class="container flex items-center">
+    <div class="px-6 flex items-center w-full">
       <nuxt-link to="/" class="inline-flex h-full items-center">
         <img src="/whpptLogo.png" class="h-full" />
         <span class="ml-2 font-bold text-lg">Whppt</span>

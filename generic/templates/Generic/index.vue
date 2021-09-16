@@ -4,11 +4,15 @@
       <PageNavigation class="nav-spacer" />
     </div>
     <div class="container nav-spacer flex flex-1">
-      <div class="w-3/4">
-        <div v-whppt-text="page.header" data-property="title" class="font-extrabold text-3xl mb-8 container">
+      <div class="w-3/4 pb-12">
+        <h1 v-whppt-text="page.header" data-property="title" class="font-extrabold text-3xl mb-8 container">
           {{ page.header.title || 'Title' }}
-        </div>
+        </h1>
         <w-content :content-items="page.contents" style="min-height: 200px" class="page-contents w-full" />
+        <div class="flex justify-end container italic text-sm">
+          <span>Last updated on&nbsp;</span>
+          <span class="font-bold">{{ updatedAt }}</span>
+        </div>
       </div>
       <div class="w-1/4 pl-4">
         <anchor-list :page="page" />
@@ -18,6 +22,7 @@
 </template>
 
 <script>
+import dayjs from 'dayjs';
 import AnchorList from './AnchorList.vue';
 import PageNavigation from '~~/PageNavigation';
 
@@ -26,6 +31,11 @@ export default {
   components: { AnchorList, PageNavigation },
   props: {
     page: { type: Object, default: () => ({}) },
+  },
+  computed: {
+    updatedAt() {
+      return dayjs(this.page.updatedAt || this.page.createdAt).format('DD-MM-YYYY');
+    },
   },
 };
 </script>
