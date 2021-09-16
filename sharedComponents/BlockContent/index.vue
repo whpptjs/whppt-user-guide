@@ -2,7 +2,7 @@
   <div>
     <div v-whppt-list="{ data: content, addNew }" data-property="items" class="my-4" :class="{ 'py-4': inEditor }">
       <div v-if="content.items.length" class="flex flex-wrap w-full justify-center">
-        <div v-for="(item, index) in content.items" :key="index" class="w-1/3 mb-8">
+        <div v-for="(item, index) in content.items" :key="index" class="lg:w-1/3 mb-8">
           <Block :item="item" class="mx-8" />
         </div>
       </div>

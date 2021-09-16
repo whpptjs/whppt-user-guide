@@ -103,7 +103,7 @@ module.exports = {
       },
       container: {
         center: true,
-        padding: '2rem',
+        padding: '1rem',
       },
       inset: {
         '-8': '-2rem',
@@ -153,6 +153,7 @@ module.exports = {
       },
       lineHeight: {
         tighter: '1.15',
+        normal: '1.625',
       },
       fontWeight: {
         book: 350,

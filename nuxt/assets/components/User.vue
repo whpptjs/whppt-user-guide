@@ -10,7 +10,6 @@ export default {
   computed: {
     ...mapState('client', ['client']),
     abbreviation() {
-      console.log('🚀 ~ file: User.vue ~ line 13 ~ this.client', this.client);
       return this.client?.username.slice(0, 2).toUpperCase();
     },
   },

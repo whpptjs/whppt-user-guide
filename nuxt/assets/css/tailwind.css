@@ -5,6 +5,7 @@
 body,
 html {
   font-family: 'Avenir Book', sans-serif;
+  line-height: 1.625;
 }
 
 @media (min-width: 1440px) {
@@ -19,7 +20,7 @@ html {
   }
 
   .nav-spacer {
-    @apply mt-16;
+    @apply mt-24;
   }
 }
 
