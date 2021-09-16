@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- Client Setting goes here -->
-    <whppt-card title="All Clients">
+    <client-editor v-if="editingClient" :client="editingClient" />
+    <whppt-card title="All Clients" v-else>
       <div class="flex justify-end mb-4">
         <whppt-button @click="addNewClient"> Add a New Client </whppt-button>
       </div>
@@ -39,6 +39,8 @@ import Edit from '@whppt/nuxt/lib/components/icons/Edit';
 import Trash from '@whppt/nuxt/lib/components/icons/Trash';
 import uniqid from 'uniqid';
 
+import ClientEditor from './ClientEditor';
+
 export default {
   name: 'ClientSettings',
   components: {
@@ -47,6 +49,7 @@ export default {
     WhpptButton,
     Edit,
     Trash,
+    ClientEditor,
   },
   mixins: [siteSettingsMixin],
   data: () => ({
