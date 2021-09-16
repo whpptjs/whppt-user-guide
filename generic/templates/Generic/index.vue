@@ -1,15 +1,19 @@
 <template>
-  <div class="relative flex justify-between w-full container">
-    <div class="w-3/12 border-r border-gray-200">
-      <PageNavigation />
+  <div class="relative flex justify-between w-full">
+    <div class="w-80 border-r border-gray-200 px-4 max-w-lg">
+      <PageNavigation class="nav-spacer" />
     </div>
-    <div class="w-7/12 pt-4 nav-spacer">
-      <div v-whppt-text="page.header" data-property="title" class="font-extrabold text-3xl mb-8 container">
-        {{ page.header.title || 'Title' }}
+    <div class="container nav-spacer flex flex-1">
+      <div class="w-3/4">
+        <div v-whppt-text="page.header" data-property="title" class="font-extrabold text-3xl mb-8 container">
+          {{ page.header.title || 'Title' }}
+        </div>
+        <w-content :content-items="page.contents" style="min-height: 200px" class="page-contents w-full" />
       </div>
-      <w-content :content-items="page.contents" style="min-height: 200px" class="page-contents w-full" />
+      <div class="w-1/4 pl-4">
+        <anchor-list :page="page" />
+      </div>
     </div>
-    <anchor-list class="w-2/12 pt-4 nav-spacer" :page="page" />
   </div>
 </template>
 

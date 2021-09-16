@@ -1,6 +1,6 @@
 import Vue from 'vue';
+import ResizeSensor from 'resize-sensor';
 import VueStickyDirective from '@renatodeleao/vue-sticky-directive';
-// import ResizeSensor from 'resize-sensor';
-// window.ResizeSensor = ResizeSensor;
+window.ResizeSensor = ResizeSensor;
 
 Vue.use(VueStickyDirective);

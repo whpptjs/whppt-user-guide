@@ -103,7 +103,7 @@ module.exports = {
       },
       container: {
         center: true,
-        padding: '2rem',
+        padding: '1rem',
       },
       inset: {
         '-8': '-2rem',

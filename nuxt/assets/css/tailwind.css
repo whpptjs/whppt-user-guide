@@ -20,7 +20,7 @@ html {
   }
 
   .nav-spacer {
-    @apply mt-16;
+    @apply mt-24;
   }
 }
 

@@ -1,6 +1,6 @@
 <template>
-  <div v-sticky="stickyOptions">
-    <div class="pr-2 pb-4 mt-24 relative">
+  <div v-sticky="stickyOptions" class="w-full">
+    <div class="relative">
       <div class="font-bold text-lg pl-2 mb-4">Guide</div>
       <div v-whppt-list="{ data: nav, addNew }" data-property="side" :class="{ 'py-4': inEditor }">
         <div v-if="nav.side.length">
@@ -36,7 +36,8 @@ export default {
   },
   created() {
     this.stickyOptions = {
-      topSpacing: 0,
+      topSpacing: 96,
+      resizeSensor: true,
     };
   },
   methods: {
