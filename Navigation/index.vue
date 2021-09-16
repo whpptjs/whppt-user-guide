@@ -27,8 +27,10 @@
         </div>
         <div v-if="nav.top.length === 0 && inEditor">Add Nav Items Here</div>
       </div>
-      <User v-if="client" />
-      <PrimaryButton v-else @click="$router.push('/login')">Login</PrimaryButton>
+      <div class="ml-auto">
+        <User v-if="client" />
+        <PrimaryButton v-else @click="$router.push('/login')">Login</PrimaryButton>
+      </div>
     </div>
   </nav>
 </template>
