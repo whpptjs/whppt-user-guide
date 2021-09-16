@@ -153,6 +153,7 @@ module.exports = {
       },
       lineHeight: {
         tighter: '1.15',
+        normal: '1.625',
       },
       fontWeight: {
         book: 350,
