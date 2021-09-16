@@ -59,7 +59,11 @@ export default {
       scrollTransparent: true,
     };
   },
-  computed: { ...mapState('whppt/site', ['nav']), ...mapGetters(['inEditor']), ...mapState('client', ['client']) },
+  computed: {
+    ...mapState('whppt/site', ['nav']),
+    ...mapGetters(['inEditor']),
+    ...mapState('client', ['client']),
+  },
   mounted() {
     window.addEventListener('scroll', throttle(this.onScroll, 200));
   },

@@ -1,20 +1,29 @@
 <template>
-  <div v-sticky="stickyOptions">
-    <div class="font-bold text-lg pl-2 mb-4">Guide</div>
-    <div v-whppt-list="{ data: nav, addNew: addNewSideItem }" data-property="side" :class="{ 'py-4': inEditor }">
-      <div v-if="nav.side.length">
-        <div v-for="(item, index) in nav.side" :key="index" class="my-1">
-          <NavLinkGroup
-            :item="item"
-            :item-idx="index"
-            :sub-items-open="openItemIdx === index"
-            @openItem="setOpenItem"
-          />
+  <div class="px-2">
+    <div v-for="clientItem in shownClientsWithNavItems" :key="clientItem.clientId" class="mt-4">
+      <div v-if="clientItem.items.length || inEditor">
+        <div class="border-t border-gray-100 pt-4">
+          {{ clientItem.username }}
+        </div>
+        <div
+          v-whppt-list="{ data: clientItem, addNew: addNewClientItem }"
+          data-property="items"
+          :class="{ 'py-4': inEditor }"
+        >
+          <div v-if="clientItem.items.length">
+            <div v-for="(item, index) in clientItem.items" :key="index" class="my-1">
+              <NavLinkGroup
+                :item="item"
+                :item-idx="index"
+                :sub-items-open="openItemIdx === index"
+                @openItem="setOpenItem"
+              />
+            </div>
+          </div>
+          <div v-if="clientItem.items.length === 0 && inEditor" class="text-gray-400">Add Client Items Here</div>
         </div>
       </div>
-      <div v-if="nav.side.length === 0 && inEditor">Add Items Here</div>
     </div>
-    <client-content />
   </div>
 </template>
 
@@ -23,17 +32,30 @@ import { filter } from 'lodash';
 import { mapState, mapActions, mapGetters } from 'vuex';
 
 import NavLinkGroup from './NavLinkGroup';
-import ClientContent from './ClientContent';
 
 export default {
-  name: 'PageNavigationContent',
-  components: { NavLinkGroup, ClientContent },
+  name: 'PageNavigationClientContent',
+  components: { NavLinkGroup },
   data: () => ({
     openItemIdx: undefined,
     clients: [],
+    nav: {
+      clients: [
+        {
+          clientId: '614283b8ff47f15d19146b77',
+          username: 'uc',
+          items: [
+            {
+              link: { type: 'page' },
+              subItems: [],
+            },
+          ],
+        },
+      ],
+    },
   }),
   computed: {
-    ...mapState('whppt/site', ['nav']),
+    // ...mapState('whppt/site', ['nav']),
     ...mapState('whppt/config', ['domain']),
     ...mapState('whppt/security', ['authUser']),
     ...mapState('client', ['client']),
@@ -45,10 +67,6 @@ export default {
     },
   },
   created() {
-    this.stickyOptions = {
-      topSpacing: 0,
-      resizeSensor: true,
-    };
     this.loadClients();
   },
   methods: {
@@ -59,15 +77,6 @@ export default {
     loadClients() {
       return this.$axios.$get(`/api/client/loadClientsForSelector?domainId=${this.domain._id}`).then(clients => {
         this.clients = clients;
-      });
-    },
-    addNewSideItem() {
-      this.pushSelectedComponentState({
-        path: 'side',
-        value: {
-          link: { type: 'page' },
-          subItems: [],
-        },
       });
     },
     addNewClientItem() {
