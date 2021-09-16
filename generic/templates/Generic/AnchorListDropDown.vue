@@ -9,7 +9,7 @@
       ></icon>
     </div>
     <div class="overflow-hidden noHeight" :class="{ addHeight: !hide }">
-      <div class="border-t border-gray-200 pt-2">
+      <div v-if="!hide" class="border-t border-gray-200 pt-2">
         <anchor-list class="py-1 px-2" :page="page" />
       </div>
     </div>
