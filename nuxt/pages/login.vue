@@ -49,6 +49,7 @@ export default {
           Cookies.set('docsAuthToken', token, { expires: 3 });
           this.loading = false;
           this.loadMe();
+          this.$router.push('/');
         })
         .catch(() => {
           this.loading = false;

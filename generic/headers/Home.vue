@@ -31,12 +31,13 @@
                 },
               })
             "
-            :class="{ 'bg-gray-200 aspect-ratio-square': !header.image.imageId || inEditor }"
+            class="aspect-ratio-square relative"
+            :class="{ 'bg-gray-200': !header.image.imageId || inEditor }"
           >
             <img
               v-if="header.image.imageId"
-              v-lazy="$whppt.getImage(header.image.imageId, '', '', { crop: header.image.desktop })"
-              class="w-full"
+              v-lazy="$whppt.getImage(header.image.imageId, 900, 900, { crop: header.image.desktop })"
+              class="absolute inset-0 w-full h-full"
             />
           </div>
         </div>

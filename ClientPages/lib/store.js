@@ -20,6 +20,6 @@ export const mutations = {
   },
   logout_user(state) {
     state.client = undefined;
-    Cookies.remove('authToken');
+    Cookies.remove('docsAuthToken');
   },
 };

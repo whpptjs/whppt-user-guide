@@ -22,41 +22,19 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters } from 'vuex';
-
 import NavContent from './Content';
 
 export default {
   name: 'PageNavigation',
   components: { NavContent },
   data: () => ({
-    openItemIdx: undefined,
     mobileShow: false,
   }),
-  computed: {
-    ...mapState('whppt/site', ['nav']),
-    ...mapGetters(['inEditor']),
-  },
   created() {
     this.stickyOptions = {
       topSpacing: 96,
       resizeSensor: true,
     };
-  },
-  methods: {
-    ...mapActions('whppt/editor', ['pushSelectedComponentState']),
-    setOpenItem(itemIdx) {
-      this.openItemIdx = this.openItemIdx === itemIdx ? undefined : itemIdx;
-    },
-    addNew() {
-      this.pushSelectedComponentState({
-        path: 'side',
-        value: {
-          link: { type: 'page' },
-          subItems: [],
-        },
-      });
-    },
   },
 };
 </script>

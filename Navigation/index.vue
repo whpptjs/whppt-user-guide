@@ -28,7 +28,10 @@
         <div v-if="nav.top.length === 0 && inEditor">Add Nav Items Here</div>
       </div>
       <div class="ml-auto">
-        <User v-if="client" />
+        <div v-if="client" class="flex items-center">
+          <User />
+          <TextButton class="ml-4" @click="logout()">Logout</TextButton>
+        </div>
         <PrimaryButton v-else @click="$router.push('/login')">Login</PrimaryButton>
       </div>
     </div>
@@ -37,7 +40,7 @@
 
 <script>
 import { throttle } from 'lodash';
-import { mapState, mapActions, mapGetters } from 'vuex';
+import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
 
 import User from '~/assets/components/User';
 
@@ -72,6 +75,7 @@ export default {
   },
   methods: {
     ...mapActions('whppt/editor', ['pushSelectedComponentState']),
+    ...mapMutations('client', ['logout_user']),
     addNew() {
       this.pushSelectedComponentState({
         path: 'top',
@@ -81,6 +85,10 @@ export default {
           text: '',
         },
       });
+    },
+    logout() {
+      this.$router.push('/');
+      this.logout_user();
     },
     onScroll() {
       const top = document.body.scrollTop;

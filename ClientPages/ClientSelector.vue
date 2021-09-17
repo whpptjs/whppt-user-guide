@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import WhpptSelect from '@whppt/nuxt/lib/components/ui/components/Select.vue';
 
 export default {
@@ -30,15 +29,12 @@ export default {
       clients: [],
     };
   },
-  computed: {
-    ...mapState('whppt/config', ['domain']),
-  },
   mounted() {
     this.loadClients();
   },
   methods: {
     loadClients() {
-      return this.$axios.$get(`/api/client/loadClientsForSelector?domainId=${this.domain._id}`).then(clients => {
+      return this.$axios.$get(`/api/client/loadClients`).then(clients => {
         this.clients = clients;
       });
     },

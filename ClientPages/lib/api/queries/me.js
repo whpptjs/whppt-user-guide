@@ -21,7 +21,7 @@ module.exports = {
         },
         { password: 0 }
       ).then(_user => {
-        if (!_user) throw new Error('No user found');
+        if (!_user) return null;
         return omit(_user, ['password']);
       });
     });
