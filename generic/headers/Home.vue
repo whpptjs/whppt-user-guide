@@ -9,13 +9,12 @@
               {{ header.title || 'Title' }}
             </div>
             <div
-              v-if="header.description || inEditor"
-              v-whppt-text="header"
+              v-if="(header.description && header.description !== '<p></p>') || inEditor"
+              v-whppt-rich-text="header"
               data-property="description"
-              class="text-xl"
-            >
-              {{ header.description || 'description' }}
-            </div>
+              class="text-xl mt-4"
+              v-html="header.description && header.description !== '<p></p>' ? header.description : 'Item text'"
+            />
             <div class="flex mt-8">
               <whppt-link
                 v-if="header.primaryLink.href || inEditor"
