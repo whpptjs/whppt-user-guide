@@ -40,20 +40,7 @@
             </div>
             <div class="mt-8 lg:mt-16 flex justify-center lg:justify-start">
               <whppt-link :to="homepageLink">
-                <div
-                  class="
-                    font-bold
-                    py-2
-                    px-4
-                    md:py-4 md:px-8
-                    lg:px-12
-                    rounded
-                    inline-flex
-                    justify-center
-                    items-center
-                    text-white
-                  "
-                >
+                <div class="font-bold py-2 px-4 md:py-4 inline-flex justify-center items-center">
                   {{ homepageLink.text }}
                 </div>
               </whppt-link>
@@ -92,7 +79,7 @@ export default {
       return [];
     },
     homepageLink() {
-      return { type: 'page', text: 'Homepage', href: '/' };
+      return { type: 'page', text: 'Go back to home', href: '/' };
     },
     statusCode() {
       return (this.error && this.error.statusCode) || 500;
@@ -101,6 +88,7 @@ export default {
       const unknownClientError = this.statusCode !== 404 && process.env.NODE_ENV !== 'development';
       if (unknownClientError) return 'An Unknown Error Occurred';
       if (this.statusCode === 404) return 'Page not found';
+      if (this.statusCode === 403) return 'Sorry, you are not authorised to view this page';
       return get(this, 'error.message'); // developer error message
     },
     content() {

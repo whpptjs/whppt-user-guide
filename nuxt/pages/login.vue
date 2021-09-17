@@ -15,7 +15,8 @@
           Please provide a password
         </span>
       </div>
-      <PrimaryButton class="mt-12 w-full" @click="loginUser">Submit</PrimaryButton>
+      <PrimaryButton class="mt-8 w-full" @click="loginUser">Submit</PrimaryButton>
+      <span v-if="error" class="text-red-500 text-sm">{{ error }}</span>
     </div>
   </div>
 </template>
@@ -35,6 +36,7 @@ export default {
       username: '',
       password: '',
     },
+    error: undefined,
   }),
   head() {
     return {
@@ -44,6 +46,7 @@ export default {
   methods: {
     ...mapActions('client', ['loadMe']),
     loginUser() {
+      this.error = undefined;
       this.$v.$touch();
       if (this.$v.$invalid) return;
       this.loading = true;
