@@ -46,11 +46,6 @@ export default {
     ...mapState('client', ['client']),
     ...mapGetters(['inEditor']),
     shownClientsWithNavItems() {
-      console.log(
-        '🚀 ~ file: ClientContent.vue ~ line 61 ~ shownClientsWithNavItems ~ this.nav.clientMenus',
-        this.nav.clientMenus
-      );
-
       if (this.authUser) return this.nav.clientMenus;
       if (this.client) return filter(this.nav.clientMenus, { clientId: this.client._id });
       return [];
