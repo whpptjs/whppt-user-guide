@@ -1,8 +1,10 @@
 <template>
   <div class="relative text-text">
     <site-nav />
-    <component :is="page.template" v-if="page" :page="page"></component>
-    <site-footer />
+    <div class="min-h-screen flex flex-col justify-between">
+      <component :is="page.template" v-if="page" :page="page"></component>
+      <site-footer />
+    </div>
   </div>
 </template>
 
