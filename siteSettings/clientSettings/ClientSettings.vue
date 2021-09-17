@@ -18,7 +18,13 @@
               <whppt-button flat @click="saveClient(item)">
                 <save />
               </whppt-button>
-              <whppt-button flat @click="removeClient(item._id)">
+              <whppt-button v-if="!item.published" flat @click="publishClient(item)">
+                <publish />
+              </whppt-button>
+              <whppt-button v-if="item.published" flat @click="unpublishClient(item._id)">
+                <unpublish />
+              </whppt-button>
+              <whppt-button v-if="!item.published" flat @click="removeClient(item._id)">
                 <trash />
               </whppt-button>
             </div>
@@ -37,6 +43,8 @@ import WhpptButton from '@whppt/nuxt/lib/components/ui/components/Button.vue';
 import siteSettingsMixin from '@whppt/nuxt/lib/util/mixins/siteSettings';
 import Edit from '@whppt/nuxt/lib/components/icons/Edit';
 import Save from '@whppt/nuxt/lib/components/icons/Save';
+import Publish from '@whppt/nuxt/lib/components/icons/Publish';
+import Unpublish from '@whppt/nuxt/lib/components/icons/Unpublish';
 import Trash from '@whppt/nuxt/lib/components/icons/Trash';
 
 import ClientEditor from './ClientEditor';
@@ -49,6 +57,8 @@ export default {
     WhpptButton,
     Edit,
     Save,
+    Publish,
+    Unpublish,
     Trash,
     ClientEditor,
   },
@@ -95,10 +105,31 @@ export default {
           this.$toast.global.editorSuccess('Client saved');
         });
     },
+    publishClient(client) {
+      return this.$axios
+        .$post(`/api/client/publishClient`, {
+          client,
+        })
+        .then(() => {
+          this.$toast.global.editorSuccess('Client published');
+          this.loadClients();
+        });
+    },
+    unpublishClient(clientId) {
+      return this.$axios
+        .$post(`/api/client/unpublishClient`, {
+          clientId,
+        })
+        .then(() => {
+          this.$toast.global.editorSuccess('Client unpublished');
+          this.loadClients();
+        });
+    },
     removeClient(clientId) {
       return this.$axios
         .$post(`/api/client/deleteClient`, {
           clientId,
+          navId: this.nav._id,
         })
         .then(() => {
           this.$toast.global.editorSuccess('Client deleted');
