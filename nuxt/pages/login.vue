@@ -38,6 +38,11 @@ export default {
     },
     error: undefined,
   }),
+  head() {
+    return {
+      title: 'Login | Whppt Guide',
+    };
+  },
   methods: {
     ...mapActions('client', ['loadMe']),
     loginUser() {

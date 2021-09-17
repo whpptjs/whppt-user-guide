@@ -27,10 +27,10 @@
         </div>
         <div v-if="nav.top.length === 0 && inEditor">Add Nav Items Here</div>
       </div>
-      <div class="ml-auto">
+      <div v-if="loadedClient" class="ml-auto">
         <div v-if="client" class="flex items-center">
           <User />
-          <TextButton class="ml-4" @click="logout()">Logout</TextButton>
+          <TextButton v-if="!authUser" class="ml-4" @click="logout()">Logout</TextButton>
         </div>
         <PrimaryButton v-else @click="$router.push('/login')">Login</PrimaryButton>
       </div>
@@ -64,8 +64,9 @@ export default {
   },
   computed: {
     ...mapState('whppt/site', ['nav']),
+    ...mapState('whppt/security', ['authUser']),
     ...mapGetters(['inEditor']),
-    ...mapState('client', ['client']),
+    ...mapState('client', ['client', 'loadedClient']),
   },
   mounted() {
     window.addEventListener('scroll', throttle(this.onScroll, 200));
