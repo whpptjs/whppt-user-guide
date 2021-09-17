@@ -1,7 +1,7 @@
 <template>
   <div class="relative text-text">
     <site-nav />
-    <component :is="page.template" v-if="page" :page="page"></component>
+    <Generic v-if="page" :page="page" />
     <site-footer />
   </div>
 </template>
@@ -11,14 +11,13 @@ import { mapState } from 'vuex';
 
 import meta from '~/meta';
 
-import Home from '~~/generic/templates/Home';
 import Generic from '~~/generic/templates/Generic';
 import SiteNav from '~~/Navigation';
 import SiteFooter from '~~/Footer';
 
 export default {
   name: 'MainPage',
-  components: { Generic, Home, SiteNav, SiteFooter },
+  components: { Generic, SiteNav, SiteFooter },
   mixins: [meta],
   scrollToTop: true,
   transition: {
