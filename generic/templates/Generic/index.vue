@@ -1,6 +1,6 @@
 <template>
   <div class="relative lg:flex w-full">
-    <div class="container lg:w-64 block lg:border-r border-gray-200 mb-8">
+    <div class="container lg:mx-0 lg:px-4 lg:w-64 block lg:border-r border-gray-200 mb-8">
       <PageNavigation />
     </div>
     <div class="container lg:mt-24 flex-1">
