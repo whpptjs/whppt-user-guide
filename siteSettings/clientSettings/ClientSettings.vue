@@ -18,7 +18,7 @@
               <whppt-button flat @click="saveClient(item)">
                 <save />
               </whppt-button>
-              <whppt-button v-if="!item.published" flat @click="publishClient(item)">
+              <whppt-button flat @click="publishClient(item)">
                 <publish />
               </whppt-button>
               <whppt-button v-if="item.published" flat @click="unpublishClient(item._id)">

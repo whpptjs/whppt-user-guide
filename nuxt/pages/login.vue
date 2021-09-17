@@ -36,6 +36,11 @@ export default {
       password: '',
     },
   }),
+  head() {
+    return {
+      title: 'Login | Whppt Guide',
+    };
+  },
   methods: {
     ...mapActions('client', ['loadMe']),
     loginUser() {
