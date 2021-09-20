@@ -25,6 +25,8 @@ export default {
       label: 'Client Page',
       init: ({ $set }, page) => {
         if (!page.header) $set(page, 'header', { title: '' });
+        if (!page.pageActions) $set(page, 'pageActions', { previous: { type: 'page' }, next: { type: 'page' } });
+
         if (!page.contents) $set(page, 'contents', []);
 
         return page;
