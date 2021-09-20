@@ -20,6 +20,7 @@
             <span>Last updated on&nbsp;</span>
             <span class="font-bold">{{ updatedAt }}</span>
           </div>
+          <GenericPageActions :page-actions="page.pageActions" />
         </div>
         <div class="w-1/4 pl-4 hidden lg:block">
           <anchor-list :page="page" />
@@ -33,11 +34,12 @@
 import dayjs from 'dayjs';
 import AnchorList from './AnchorList.vue';
 import AnchorListDropDown from './AnchorListDropDown.vue';
+import GenericPageActions from './Actions.vue';
 import PageNavigation from '~~/PageNavigation';
 
 export default {
   name: 'GenericTemplate',
-  components: { AnchorList, PageNavigation, AnchorListDropDown },
+  components: { AnchorList, PageNavigation, AnchorListDropDown, GenericPageActions },
   props: {
     page: { type: Object, default: () => ({}) },
   },

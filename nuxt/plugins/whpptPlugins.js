@@ -1,11 +1,17 @@
 import generic from '~~/generic/plugin';
 import clientPages from '~~/ClientPages/plugin';
+
 import clientSettings from '~~/siteSettings/clientSettings';
 
+import checkbox from '~~/editors/checkbox/Plugin';
+
 export default ({ app }) => {
-  app.$whppt.addPlugin(clientSettings);
   app.$whppt.addPlugin(generic);
   app.$whppt.addPlugin(clientPages);
+
+  app.$whppt.addPlugin(clientSettings);
+
+  app.$whppt.addPlugin(checkbox);
 
   app.$whppt.initNav = ({ $set }, nav) => {
     if (!nav.top) $set(nav, 'top', []);

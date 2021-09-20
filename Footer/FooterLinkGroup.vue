@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-whppt-text="group" data-property="name" class="font-bold text-lg">
+    <div v-whppt-text="group" data-property="name" class="font-bold">
       {{ group.name || 'Group name' }}
     </div>
     <div class="mt-2">
