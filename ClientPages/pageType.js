@@ -6,12 +6,12 @@ const loadPage = ({ $axios }, { slug, domainId }) => {
   });
 };
 
-const formatSlug = ({ slug }) => {
-  return `client/${slug}`;
+const formatSlug = ({ slug, page }) => {
+  return `client/${page.clientId}/${slug}`;
 };
 
-const stripSlug = ({ slug }) => {
-  return slug.replace(`client/`, '');
+const stripSlug = ({ page, slug, ...args }) => {
+  return slug.replace(`client/${page.clientId}/`, '');
 };
 
 export default {

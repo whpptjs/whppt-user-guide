@@ -29,7 +29,7 @@ export default {
     if (params.pathMatch === 'page/loadPage') return;
     return Promise.all([
       store.dispatch('whppt/page/loadPage', {
-        slug: `client/${params.clientPageSlug}`,
+        slug: `client/${params.cliendId}/${params.clientPageSlug}`,
         pageType: 'clientPage',
       }),
       store.dispatch('whppt/site/loadSiteSettings'),
