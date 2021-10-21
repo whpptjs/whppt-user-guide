@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <div v-sticky="stickyOptions" class="hidden lg:block">
+    <div v-sticky="stickyOptions" class="hidden lg:block pt-24 overflow-auto h-90vh pb-10">
       <nav-content></nav-content>
     </div>
   </div>
