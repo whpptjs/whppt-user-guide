@@ -1,5 +1,5 @@
 <template>
-  <div v-sticky="stickyOptions">
+  <div>
     <div class="lg:border-l border-gray-300 lg:pl-4">
       <div v-for="anchor in anchors" :key="anchor.id" class="mb-2">
         <whppt-link
@@ -20,12 +20,6 @@ export default {
   name: 'GenericTemplateAnchorList',
   props: {
     page: { type: Object, default: () => ({}) },
-  },
-  created() {
-    this.stickyOptions = {
-      topSpacing: 96,
-      resizeSensor: true,
-    };
   },
   computed: {
     anchors() {
