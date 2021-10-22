@@ -20,8 +20,12 @@
           </div>
           <GenericPageActions :page-actions="page.pageActions" />
         </div>
-        <div class="w-1/4 pl-4 hidden lg:block">
-          <anchor-list :page="page" />
+        <div class="hidden lg:flex fixed inset-0 mt-24 pointer-events-none">
+          <div class="flex w-full justify-end pl-64">
+            <div class="w-1/4 pl-4 pointer-events-auto">
+              <anchor-list :page="page" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
