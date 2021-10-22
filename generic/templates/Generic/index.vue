@@ -1,9 +1,7 @@
 <template>
-  <div class="relative lg:flex w-full">
-    <div class="container lg:mx-0 lg:px-4 lg:w-64 block lg:border-r border-gray-200 mb-8">
-      <PageNavigation />
-    </div>
-    <div class="container lg:mt-24 flex-1">
+  <div class="nav-spacer relative lg:flex w-full">
+    <page-navigation class="lg:mx-0 lg:w-64 block lg:border-r border-gray-200" />
+    <div class="container lg:py-10 flex-1">
       <anchor-list-drop-down class="block lg:hidden mb-8" :page="page" />
       <div class="flex">
         <div class="w-full lg:w-3/4 pb-12">

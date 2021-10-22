@@ -1,5 +1,5 @@
 <template>
-  <div v-sticky="stickyOptions">
+  <div>
     <div class="font-bold text-lg pl-2 mb-4">Guide</div>
     <div v-whppt-list="{ data: nav, addNew: addNewSideItem }" data-property="side" :class="{ 'py-4': inEditor }">
       <div v-if="nav.side.length">
@@ -34,12 +34,6 @@ export default {
   computed: {
     ...mapState('whppt/site', ['nav']),
     ...mapGetters(['inEditor']),
-  },
-  created() {
-    this.stickyOptions = {
-      topSpacing: 0,
-      resizeSensor: true,
-    };
   },
   methods: {
     ...mapActions('whppt/editor', ['pushSelectedComponentState', 'setSelectedComponentState']),
