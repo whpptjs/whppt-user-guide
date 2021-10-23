@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="hidden lg:block overflow-auto h-90vh px-4 py-12">
+    <div class="hidden lg:block px-4 py-12">
       <nav-content />
     </div>
   </div>
