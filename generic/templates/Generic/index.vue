@@ -1,9 +1,10 @@
 <template>
   <div class="nav-spacer relative lg:flex w-full">
-    <div class="lg:border-r border-gray-200">
+    <div class="lg:border-r border-gray-200 hidden lg:block">
       <page-navigation class="lg:mx-0 lg:w-64 block overflow-auto" :style="pageNavHeightStyle" />
-      <!-- <page-navigation class="lg:mx-0 lg:w-64 block overflow-auto" style="height: min(calc(90vh - 4rem), 100%)" /> -->
     </div>
+    <page-navigation class="lg:hidden" />
+
     <div ref="content" class="container lg:py-10 flex-1">
       <anchor-list-drop-down class="block lg:hidden mb-8" :page="page" />
       <div class="flex">
